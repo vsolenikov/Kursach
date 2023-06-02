@@ -20,6 +20,7 @@ class EventsTable extends Migration
             $table->longText('description');
             $table->string('address');
             $table->integer('price');
+            $table->integer('tickets');
             $table->timestamps();
         });
     }

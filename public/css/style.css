@@ -16,7 +16,22 @@ html, body {
     display: flex;
     justify-content: center;
 }
+.nav-logo{
+    max-width: 85px;
+}
+.page-logo{
+    transition: 3s;
 
+}
+.card-header {
+    opacity: 0;
+    animation: ani 3.5s forwards;
+}
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
 .position-ref {
     position: relative;
 }
@@ -49,11 +64,35 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
-
+.justify-content-center{
+    padding: 0 15px;
+}
+.filter-form form{
+    background: IndianRed;
+    min-height: 50px;
+    padding: 30px;
+    color: white;
+    border-radius: 12px;
+    border: transparent;
+    width: 100%;
+}
+.filter-form form input{
+    border-radius: 7px;
+}
+.filter-form form .span-form{
+    min-width: 33%;
+    display: contents;
+}
 main{
     background: url("/assets/fon.jpg") no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+.footer{
+    width: 100%;
+    min-height: 100px;
+    background: IndianRed;
+    bottom: 0;
 }
 .red-picture{
     background: url("/assets/fon.jpg");
@@ -66,6 +105,16 @@ main{
     min-height: 300px;
     background: white;
     padding: 20px;
+}
+.single-card:last-child{
+    margin-bottom: 120px;
+}
+.card-header{
+    font-size: 82px;
+    text-align: right;
+    font-family: Montserrat;
+    background: transparent;
+    border: none !important;
 }
 .h-card{
     text-align: center;
@@ -84,7 +133,7 @@ main{
 .card-button{
     border-radius: 12px;
     color: white;
-    background-color: red;
+    background-color: IndianRed;
     padding: 10px;
     border: none;
 }
