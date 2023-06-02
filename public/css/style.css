@@ -1,0 +1,125 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+main{
+    background: url("/assets/fon.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.red-picture{
+    background: url("/assets/fon.jpg");
+    background-size: cover;
+}
+.single-card{
+    border-radius: 12px;
+    border: 1px solid lightgray;
+    margin: 20px 0px;
+    min-height: 300px;
+    background: white;
+    padding: 20px;
+}
+.h-card{
+    text-align: center;
+    font-size: 34px;
+    padding: 20px;
+}
+.table-description{
+}
+.table-data{
+    width: -webkit-fill-available;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 340px;
+}
+.card-button{
+    border-radius: 12px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border: none;
+}
+.table-data .card-price{
+    font-size:30px;
+}
+.table-description, .table-data{
+    display: inline;
+}
+.table-description{
+    float: left;
+}
+.table-data{
+    float: right;
+}
+.card-data{
+    display: inline-flex;
+    padding: 20px;
+
+}
+
+@media(max-width:600px){
+    .title {
+        font-size: 42px;
+    }
+    .red-picture{
+        background: url("/assets/fon.jpg");
+        background-size: cover;
+        background-position-y: 185px;
+    }
+}
+@media(max-width: 1120px){
+    .card-data{
+        display: block;
+        padding: 20px;
+
+    }
+}
