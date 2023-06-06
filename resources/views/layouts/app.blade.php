@@ -10,6 +10,7 @@
 
     <title>{{ config('app.name', 'Mero') }}</title>
 
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -22,6 +23,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+{{--    js--}}
+    <script src="http://atuin.ru/js/art/stars.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="app">

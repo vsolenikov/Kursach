@@ -19,7 +19,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height red-picture">
+        <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -33,14 +33,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Регистрация мероприятий <br>в городе Тутаев
+                    <img src="/assets/logo.png" class="page-logo" alt=""> <br>
+                    Мероприятия <br>в городе Тутаев
                 </div>
 
                 <div class="links">
-                    <a href="#">Список мероприятий</a>
-                    <a href="#">О нас</a>
-                    <a href="#">Авторизация</a>
-                    <a href="#">Регистрация</a>
+                    <a href="{{route('home')}}">Список мероприятий</a>
+                    <a href="{{route('about')}}">О нас</a>
+                    <a href="{{route('login')}}">Авторизация</a>
+                    <a href="{{route('register')}}">Регистрация</a>
                 </div>
             </div>
         </div>

@@ -22,9 +22,12 @@
             </div>
             <div class="col-12 col-md-12 filter-form">
                 <form action="##">
-                    <div class="span-form">Название:</div> <input type="text">
-                    <div class="span-form">Даты:</div> <input type="text"><input type="text">
-                    <div class="span-form">Наличие билетов:</div> <input type="checkbox" name="" id="">
+                    <div class="span-form">Название:</div>
+                    <input type="text">
+                    <div class="span-form">Даты:</div>
+                    <input type="text"><input type="text">
+                    <div class="span-form">Наличие билетов:</div>
+                    <input type="checkbox" name="" id="">
                 </form>
             </div>
             @foreach($events as $event)
@@ -39,11 +42,45 @@
                         Адрес: {{ $event->address }}
                         <p class="card-price">Цена: {{ $event->price }}р</p>
                         <p>
-                            <button class="card-button">
+                            @if(!Auth::guest())
+                            <a href="##" class="card-button"
+                                    onclick="document.querySelectorAll('#form-{{$event->id}}')[0].style.margin=0;">
                                 Купить билеты
-                            </button>
+                            </a>
+                            @else
+                                <a href="{{ route('login') }}" class="card-button"
+                                        onclick="{{ redirect(route('login')) }}">
+                                    Купить билеты
+                                </a>
+                                @endif
                         </p>
                     </div>
+                </div>
+
+                <div class="buy-form" id="form-{{$event->id}}">
+                    <h3>Купить билеты на {{$event->name_event}}</h3>
+                    <p>Билетов осталось : 34/{{$event->tickets}}</p>
+                    <form action="">
+                        <a href="javascript:void(0)" class="closer"
+                           onclick="document.querySelectorAll('#form-{{$event->id}}')[0].style.margin='250%';">×</a>
+                        <span class="label">Дата: <input type="text" readonly value="{{$event->date_event}}"></span><br>
+                        <span class="label">Адрес: <input type="text" readonly value="{{$event->address}}"></span><br>
+                        <span class="label">Кол-во билетов: <br>
+                            <input type="text" id="ticket-{{$event->id}}" value="1">
+
+                            <a href="javascript:void(0)" class="button_plus_minus" style="right: 20%"
+                               onclick="document.querySelectorAll('#ticket-{{$event->id}}')[0].value++">+</a>
+                            <a href="javascript:void(0)" class="button_plus_minus" style="right: 10%"
+                               onclick="if(document.querySelectorAll('#ticket-{{$event->id}}')[0].value>1){document.querySelectorAll('#ticket-{{$event->id}}')[0].value--}">-</a>
+                        </span><br>
+                        <span class="label">Цена: <input type="text" readonly value="{{$event->price}}"></span><br>
+                        <span class="label">Описание: <textarea name="" id="" readonly cols="30"
+                                                                rows="10">{{$event->description}}</textarea>
+
+                            <button class="buy-ticket">
+                                Заказать
+                            </button>
+                    </form>
                 </div>
             @endforeach
         </div>
