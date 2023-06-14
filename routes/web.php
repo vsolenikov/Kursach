@@ -29,3 +29,9 @@ Route::get('/register', function (){
 Route::get('/about', function (){
     return view('about');
 })->name('about');
+
+Route::get('/register_event', function (){
+    return view('add_event');
+});
+Route::post('/add', 'EventController@create')->name('add-event');
+
